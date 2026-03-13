@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Official Results | GA-DISEC | GSV MUN 2026</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
+    />
+
+    <style>
+      .page-header {
+        background-color: var(--logo-dark-blue);
+        padding: 150px 20px 60px;
+        text-align: center;
+        color: var(--white);
+        border-bottom: 5px solid var(--logo-bright-blue);
+      }
+      .page-header h1 {
+        color: var(--white);
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Congratulatory Box */
+      .intro-box {
+        background: var(--white);
+        padding: 3rem;
+        border-radius: 8px;
+        box-shadow: var(--shadow-elegant);
+        border: 1px solid var(--border-light);
+        border-top: 5px solid var(--logo-bright-blue);
+        margin-bottom: 4rem;
+        text-align: center;
+      }
+      .intro-box h2 {
+        color: var(--logo-dark-blue);
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        font-family: "Playfair Display", serif;
+      }
+      .intro-box p {
+        color: var(--text-body);
+        line-height: 1.8;
+        font-size: 1.05rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Matrix Table Styles */
+      .table-wrapper {
+        overflow-x: auto;
+        background: var(--white);
+        border-radius: 8px;
+        box-shadow: var(--shadow-elegant);
+        border: 1px solid var(--border-light);
+        margin-bottom: 4rem;
+      }
+      .matrix-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        min-width: 600px;
+      }
+      .matrix-table th {
+        background: var(--logo-dark-blue);
+        color: var(--white);
+        padding: 1.2rem 1.5rem;
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .matrix-table td {
+        padding: 1.2rem 1.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        color: var(--text-body);
+        font-size: 1.05rem;
+        vertical-align: middle;
+      }
+      .matrix-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* Specific Result Typography */
+      .award-title {
+        font-weight: 700;
+        color: var(--logo-dark-blue);
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .delegate-name {
+        font-weight: 700;
+        color: var(--logo-dark-blue);
+      }
+      .country-name {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text-body);
+      }
+      .country-flag {
+        border-radius: 2px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+        font-size: 1.2rem;
+      }
+
+      /* Trophy Icons */
+      .trophy-gold {
+        color: #d97706;
+        font-size: 1.3rem;
+      }
+      .trophy-silver {
+        color: #64748b;
+        font-size: 1.3rem;
+      }
+      .trophy-bronze {
+        color: #9a3412;
+        font-size: 1.3rem;
+      }
+
+      /* Row Color Coding (Pastels) */
+      tr.row-gold {
+        background-color: #fefce8;
+        transition: background-color 0.2s ease;
+      }
+      tr.row-gold:hover {
+        background-color: #fef08a;
+      }
+
+      tr.row-silver {
+        background-color: #f8fafc;
+        transition: background-color 0.2s ease;
+      }
+      tr.row-silver:hover {
+        background-color: #f1f5f9;
+      }
+
+      tr.row-bronze {
+        background-color: #fff7ed;
+        transition: background-color 0.2s ease;
+      }
+      tr.row-bronze:hover {
+        background-color: #ffedd5;
+      }
+
+      tr.row-special {
+        background-color: #f0fdf4;
+        transition: background-color 0.2s ease;
+      }
+      tr.row-special:hover {
+        background-color: #dcfce7;
+      }
+
+      tr.row-verbal {
+        background-color: #f0f9ff;
+        transition: background-color 0.2s ease;
+      }
+      tr.row-verbal:hover {
+        background-color: #e0f2fe;
+      }
+
+      .section-heading {
+        color: var(--logo-dark-blue);
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        border-left: 4px solid var(--logo-bright-blue);
+        padding-left: 1rem;
+      }
+      .section-subtext {
+        color: #64748b;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        padding-left: 1rem;
+        font-style: italic;
+      }
+
+      /* Grand Closing Banner */
+      .legacy-banner {
+        background: linear-gradient(to bottom, #ffffff, #f8fafc);
+        padding: 4rem 2rem;
+        border-radius: 12px;
+        text-align: center;
+        border: 1px solid var(--border-light);
+        box-shadow: var(--shadow-elegant);
+        margin-bottom: 5rem;
+        margin-top: 2rem;
+      }
+
+      /* Mobile "Card" Layout */
+      @media (max-width: 768px) {
+        .intro-box {
+          padding: 2rem 1.5rem;
+        }
+        .legacy-banner {
+          padding: 3rem 1.5rem;
+        }
+        .matrix-table {
+          min-width: 100%;
+        }
+        .matrix-table thead {
+          display: none;
+        }
+        .matrix-table,
+        .matrix-table tbody,
+        .matrix-table tr,
+        .matrix-table td {
+          display: block;
+          width: 100%;
+        }
+        .matrix-table tr {
+          margin-bottom: 1rem;
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          border-radius: 8px;
+          box-shadow: 0 4px 15px rgba(29, 34, 102, 0.05);
+          padding: 0.5rem 0;
+        }
+        .matrix-table td {
+          text-align: right;
+          padding: 0.8rem 1.5rem 0.8rem 45%;
+          position: relative;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+        }
+        .matrix-table td:last-child {
+          border-bottom: none;
+        }
+        .matrix-table td::before {
+          position: absolute;
+          left: 1.5rem;
+          width: 40%;
+          text-align: left;
+          font-weight: 700;
+          color: var(--logo-dark-blue);
+          font-size: 0.75rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        /* Mapping labels for 3-column table (Major Awards) */
+        .table-3col td:nth-of-type(1)::before {
+          content: "Position";
+        }
+        .table-3col td:nth-of-type(2)::before {
+          content: "Delegate";
+        }
+        .table-3col td:nth-of-type(3)::before {
+          content: "Delegation";
+        }
+
+        /* Mapping labels for 2-column tables (Mentions) */
+        .table-2col td:nth-of-type(1)::before {
+          content: "Delegate";
+        }
+        .table-2col td:nth-of-type(2)::before {
+          content: "Delegation";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <img
+        src="images/gsv-mun-small (6).jpeg"
+        alt="GSV MUN Logo"
+        class="nav-logo"
+      />
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-mun.html">About MUN</a></li>
+        <li><a href="committee.html">Committee & Agenda</a></li>
+        <li><a href="rules.html">Rules of Procedure</a></li>
+        <li><a href="secretariat.html">Secretariat</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+      </ul>
+      <div class="nav-right">
+        <img
+          src="images/dnq logo updated (1).png"
+          alt="EPITOME Logo"
+          class="nav-logo"
+        />
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-header">
+      <h1>Official Results & Awards</h1>
+      <p
+        style="
+          color: var(--logo-bright-blue);
+          font-family: &quot;Inter&quot;, sans-serif;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          font-size: 0.9rem;
+        "
+      >
+        UNGA DISEC | GSV MUN 2026
+      </p>
+    </header>
+
+    <main class="container" style="padding-top: 60px; max-width: 1000px">
+      <div class="intro-box">
+        <h2>The Culmination of Diplomacy</h2>
+        <p>
+          After two days of rigorous debate, intense negotiation, and exemplary
+          diplomatic conduct, the Secretariat and Executive Board are immensely
+          proud to announce the official results of the inaugural GSV Model
+          United Nations. The following delegates have demonstrated outstanding
+          foreign policy representation, strategic coalition-building, and an
+          unwavering commitment to the resolution of complex global security
+          crises.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="section-heading">Major Awards</h3>
+        <p class="section-subtext">
+          These distinguished delegates will be formally honoured by the
+          University at the EPITOME'26 Prize Ceremony.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="matrix-table table-3col">
+            <thead>
+              <tr>
+                <th style="width: 30%">Position</th>
+                <th style="width: 30%">Delegate</th>
+                <th style="width: 40%">Delegation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-gold">
+                <td class="award-title">
+                  <i class="fa-solid fa-trophy trophy-gold"></i> Best Delegate
+                </td>
+                <td class="delegate-name">Omm Suman</td>
+                <td class="country-name">
+                  <span class="fi fi-us country-flag"></span> United States of
+                  America
+                </td>
+              </tr>
+              <tr class="row-silver">
+                <td class="award-title">
+                  <i class="fa-solid fa-trophy trophy-silver"></i> Outstanding
+                  Delegate
+                </td>
+                <td class="delegate-name">Himaneesh Bhattacharya</td>
+                <td class="country-name">
+                  <span class="fi fi-ru country-flag"></span> Russian Federation
+                </td>
+              </tr>
+              <tr class="row-bronze">
+                <td class="award-title">
+                  <i class="fa-solid fa-medal trophy-bronze"></i> High
+                  Commendation
+                </td>
+                <td class="delegate-name">Amisha Singh</td>
+                <td class="country-name">
+                  <span class="fi fi-gb country-flag"></span> United Kingdom of
+                  Great Britain and Northern Ireland
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="section-heading">Special Mentions</h3>
+        <p class="section-subtext">
+          Recognized for their exceptional contribution to the committee's
+          discourse, these delegates will receive Certificates of Appreciation
+          from the Debate & Quiz Club.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="matrix-table table-2col">
+            <thead>
+              <tr>
+                <th style="width: 50%">Delegate</th>
+                <th style="width: 50%">Delegation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-special">
+                <td class="delegate-name">Rishabh Bist</td>
+                <td class="country-name">
+                  <span class="fi fi-in country-flag"></span> Republic of India
+                </td>
+              </tr>
+              <tr class="row-special">
+                <td class="delegate-name">Lehar Gupta</td>
+                <td class="country-name">
+                  <span class="fi fi-il country-flag"></span> State of Israel
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="section-heading">Verbal Mentions</h3>
+        <p class="section-subtext">
+          Commended by the Executive Board for their consistent engagement,
+          sharp argumentation, and diplomatic presence throughout the committee
+          sessions.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="matrix-table table-2col">
+            <thead>
+              <tr>
+                <th style="width: 50%">Delegate</th>
+                <th style="width: 50%">Delegation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-verbal">
+                <td class="delegate-name">Teshavi Poddar</td>
+                <td class="country-name">
+                  <span class="fi fi-cu country-flag"></span> Republic of Cuba
+                </td>
+              </tr>
+              <tr class="row-verbal">
+                <td class="delegate-name">Ojas Singh</td>
+                <td class="country-name">
+                  <span class="fi fi-jp country-flag"></span> Japan
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="legacy-banner">
+        <i
+          class="fa-solid fa-landmark"
+          style="
+            font-size: 2.5rem;
+            color: var(--logo-bright-blue);
+            margin-bottom: 1rem;
+          "
+        ></i>
+        <h3
+          style="
+            color: var(--logo-dark-blue);
+            font-family: &quot;Playfair Display&quot;, serif;
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+          "
+        >
+          A Legacy Begins
+        </h3>
+        <p
+          style="
+            color: var(--text-body);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 750px;
+            margin: 0 auto;
+          "
+        >
+          To the delegations who stepped into the committee room, debated with
+          conviction, and forged historic alliances: you have set the standard
+          for every GSV MUN to come. Thank you for making the inaugural
+          conference an unforgettable success.
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <h3 style="font-family: &quot;Playfair Display&quot;, serif">
+        GSV Model United Nations 2026
+      </h3>
+      <p
+        style="
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 1rem;
+          color: var(--logo-bright-blue);
+        "
+      >
+        Debate & Quiz Club | Gati Shakti Vishwavidyalaya
+      </p>
+      <p>
+        Contact:
+        <a
+          href="mailto:debate.quiz@gsv.ac.in"
+          style="color: var(--white); text-decoration: underline"
+          >debate.quiz@gsv.ac.in</a
+        >
+      </p>
+      <div class="social-container">
+        <span class="social-label">Follow Us On</span>
+        <div class="social-icons">
+          <a
+            href="https://www.instagram.com/d.q.gsv/"
+            class="social-icon"
+            aria-label="Instagram"
+            target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/company/108378145/"
+            class="social-icon"
+            aria-label="LinkedIn"
+            target="_blank"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
