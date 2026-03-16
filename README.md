@@ -131,5 +131,5 @@ event, please reach out to the Organising Committee.
 **LinkedIn:** Debate & Quiz Club, GSV
 
 ---
-
-Designed and developed for the inaugural **GSV Model United Nations**.
+Developed for the inaugural **GSV Model United Nations** by Parth Sidhu
+Maintained by Debate And Quiz Club, Gati Shakti Vishwavidyalaya.
